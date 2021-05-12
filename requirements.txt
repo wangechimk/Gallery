@@ -1,6 +1,7 @@
 asgiref==3.3.4
 beautifulsoup4==4.9.3
 Django==3.2.2
+django-bootstrap-v5==1.0.3
 django-bootstrap5==1.0.0
 Pillow==8.2.0
 psycopg2-binary==2.8.6

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'picha.apps.PichaConfig',
-    'bootstrap4',
+    'bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Gallery',
+        'NAME': 'gallery',
         'USER': 'michellewangechi',
         'PASSWORD': 'Rosemary70',
     }
