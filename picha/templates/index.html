@@ -1,0 +1,67 @@
+{% load bootstrap4 %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> La Galerie </title>
+
+    <!--  -->
+    {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    
+    {% endblock %}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left"></div>
+        <div class="right"></div>
+    
+    
+        <div class="content">
+          <div class="img-wrapper">
+            <div class="karina">
+              <img src="{{% static 'img/landing.jpeg'%}}" class="img-responsive" alt="Image">
+            </div>
+          </div>
+    
+          <div class="info">
+            <ul>
+              <li>Gallery.com</li>
+              <li>@gallery.Ke</li>
+              <li>Gallery.com</li>
+              <li><i class="fa fa-share-alt"></i></li>
+            </ul>
+          </div>
+    
+          <div class="text">
+            <h1>Gallery Kenya</h1>
+            <p>Art.Creativity</p>
+          </div>
+    
+          <div class="name">karina tes</div>
+    
+          <div class="bottomnav">
+            <ul>
+              <li>Artists</li>
+              <li>Images</li>
+              <li>contact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+
+    <!--  -->
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+     {% endblock %}
+</body>
+
+</html> 
