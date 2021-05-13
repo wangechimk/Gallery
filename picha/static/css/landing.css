@@ -1,7 +1,5 @@
-@font-face {
-    font-family: 'Raiderfont';
-    src: local('Raiderfont'), url('./fonts/Raiderfont.ttf') format('truetype');
-  }
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
   
   * {
     margin: 0;
