@@ -25,6 +25,10 @@ class Images(models.Model):
     def save_image(self):
         self.save()
 
+    def delete_image(self):
+        self.delete()
+    
+
 class Locations(models.Model):
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
