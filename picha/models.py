@@ -10,6 +10,9 @@ class Category(models.Model):
     def save_category(self):
         self.save()
     
+    def delete_category(self):
+        self.delete()
+
 
 class Images(models.Model):
     image_link = models.ImageField(upload_to='images/')
@@ -38,3 +41,6 @@ class Locations(models.Model):
 
     def save_location(self):
         self.save()    
+
+    def delete_location(self):
+        self.delete()
