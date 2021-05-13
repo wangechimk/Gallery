@@ -12,7 +12,7 @@ class Images(models.Model):
     title = models.CharField(max_length=80)
     description = models.TextField()
     category=models.ForeignKey(Category, on_delete=models.CASCADE)
-    Location = models.ForeignKey('Locations', on_delete=models.CASCADE, default=1)
+    location = models.ForeignKey('Locations', on_delete=models.CASCADE, default=1)
 
 # add image categories model
     def __str__(self):
