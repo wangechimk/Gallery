@@ -20,7 +20,7 @@ class Category(models.Model):
             to_update.name = new_cat
             to_update.save()
             return to_update
-        except Images.DoesNotExist:
+        except Category.DoesNotExist:
             print('Category you specified does not exist')
 
 
@@ -52,6 +52,12 @@ class Images(models.Model):
             print('Image you specified does not exist')    
     
 
+    @classmethod
+    def get_image_by_id(cls, id):
+        retrieved = Images.objects.get(id = id)
+        return retrieved
+
+
 class Locations(models.Model):
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
@@ -72,6 +78,6 @@ class Locations(models.Model):
             to_update.city = new_locale
             to_update.save()
             return to_update
-        except Images.DoesNotExist:
+        except Locations.DoesNotExist:
             print('Location you specified does not exist') 
     
