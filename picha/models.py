@@ -7,6 +7,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name 
 
+    def save_category(self):
+        self.save()
+    
+
 class Images(models.Model):
     image_link = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=80)
@@ -18,9 +22,15 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
+    def save_image(self):
+        self.save()
+
 class Locations(models.Model):
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
 
     def __str__(self):
         return self.city
+
+    def save_location(self):
+        self.save()    
