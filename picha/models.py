@@ -13,6 +13,16 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
+    @classmethod
+    def update_category(cls, search_term , new_cat):
+        try:
+            to_update = Category.objects.get(name = search_term)
+            to_update.name = new_cat
+            to_update.save()
+            return to_update
+        except Images.DoesNotExist:
+            print('Category you specified does not exist')
+
 
 class Images(models.Model):
     image_link = models.ImageField(upload_to='images/')
@@ -30,6 +40,16 @@ class Images(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    @classmethod
+    def update_image(cls, search_term , new_link):
+        try:
+            to_update = Images.objects.get(title = search_term)
+            to_update.image_link = new_link
+            to_update.save()
+            return to_update
+        except Images.DoesNotExist:
+            print('Image you specified does not exist')    
     
 
 class Locations(models.Model):
@@ -44,3 +64,14 @@ class Locations(models.Model):
 
     def delete_location(self):
         self.delete()
+
+    @classmethod
+    def update_location(cls, search_term , new_locale):
+        try:
+            to_update = Locations.objects.get(country = search_term)
+            to_update.city = new_locale
+            to_update.save()
+            return to_update
+        except Images.DoesNotExist:
+            print('Location you specified does not exist') 
+    
