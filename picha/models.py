@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+#category model
 class Category(models.Model):
     name = models.CharField(max_length=30)
 
@@ -23,7 +24,7 @@ class Category(models.Model):
         except Category.DoesNotExist:
             print('Category you specified does not exist')
 
-
+#image model
 class Images(models.Model):
     image_link = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=80)
@@ -57,7 +58,12 @@ class Images(models.Model):
         retrieved = Images.objects.get(id = id)
         return retrieved
 
+    @classmethod
+    def search_image(cls, category):
+        retrieved = Images.objects.get(category=category)
+        return retrieved    
 
+#locations model
 class Locations(models.Model):
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
