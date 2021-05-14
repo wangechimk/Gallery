@@ -2,5 +2,24 @@
 
 <!--  -->
 {% block content %} {{block.super}}
-<p>Gallery works!</p>
-{% endblock %} 
+<div class="block">
+    <div class="row">
+
+        <div class="gallery">
+            {% for item in pictures %}
+            <div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
+                <img src="{{item.image_link.url}}" alt="" class="gallery-image">
+                <div class="gallery-item-info">
+                    <ul>
+                        <li class="gallery-item-likes"><span class="visually-hidden"></span><i class="fa fa-tags" aria-hidden="true"></i> {{item.category}} </li>
+                    </ul>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} {% block scripts %} {{block.super}}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}
