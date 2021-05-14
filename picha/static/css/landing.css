@@ -173,3 +173,37 @@
     margin: 0 10px 0 -78px;
     transform: translateY(-3px);
   }
+  .search-form {
+    margin-left: 1rem;
+  }
+  
+  .search-form input {
+    padding: 0.7rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #eee;
+    width: 600px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .search-form input:focus {
+    background: #fff;
+  }
+  /* Category nav */
+.category-nav {
+  display: flex;
+  padding-left: 0.6rem;
+  overflow: hidden;
+}
+
+.category-nav .category {
+  padding: 0.8rem;
+}
+
+.category a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+}
