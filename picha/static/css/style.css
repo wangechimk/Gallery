@@ -113,6 +113,7 @@ img {
         width: auto;
         margin: 0;
     }
+    /* search form */
     .search-form {
         margin-left: 1rem;
       }
@@ -123,7 +124,7 @@ img {
         border: none;
         background-color: #eee;
         width: 600px;
-        font-size: 0.9rem;
+        font-size: 2rem;
         color: #333;
       }
       
