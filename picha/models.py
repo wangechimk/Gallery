@@ -65,12 +65,12 @@ class Images(models.Model):
 
     @classmethod
     def search_image(cls, cat):
-        retrieved = cls.objects.filter(category__name__contains=cat) 
+        retrieved = cls.objects.filter(category__name__icontains=cat) 
         return retrieved #list of instances
 
     @classmethod
     def filter_by_location(cls ,location):
-        retrieved = Images.objects.filter(location__city__contains=location)
+        retrieved = Images.objects.filter(location__city__icontains=location)
         return retrieved    
 
 #locations model

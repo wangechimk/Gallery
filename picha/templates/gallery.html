@@ -1,10 +1,47 @@
 {% extends 'base.html' %}
+{% include 'category.html' %}
 
 <!--  -->
 {% block content %} {{block.super}}
+<div class="category-nav">
+    <div class="category">
+      <a href="#">Nature</a>
+    </div>
+    <div class="category">
+      <a href="#">Architecture</a>
+    </div>
+    <div class="category">
+      <a href="#">Fashion</a>
+    </div>
+    <div class="category">
+      <a href="#">Street photography</a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="col-sm-4 col-md-4 navbar-left">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-filter"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% for item in locations %}
+                    <a class="dropdown-item" href="/location/{{item.city}}">{{item.city}}</a> {% endfor %}
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="search-form">
+    <form action="{% url 'picha:gallery' %}" method="GET">
+      <input type="text" placeholder="Search category" name="category">
+    </form>
+</div>
+
 <div class="block">
     <div class="row">
-
+        
         <div class="gallery">
             {% for item in pictures %}
             <div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
@@ -22,4 +59,4 @@
 </div>
 {% endblock %} {% block scripts %} {{block.super}}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-{% endblock %}
+{% endblock %} -->
