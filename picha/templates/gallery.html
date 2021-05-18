@@ -26,7 +26,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for item in locations %}
-                    <a class="dropdown-item" href="/location/{{item.city}}">{{item.city}} </a> {% endfor %}
+                    <a class="dropdown-item" href="/location/{{item.city}} ">{{item.city}} </a> {% endfor %}
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                             </ul>
                         </div>
                         <div class="modal-footer">
-                            <input type="text" value="{{item.image_link.url}}" id="myInput">
+                            <input type="text" value="{{request.scheme}}://{{request.get_host}}{{item.image_link.url}}" id="myInput">
                             <button onclick="myFunction()" onmouseout="outFunc()" data-toggle="tooltip" title="copied!">Copy text</button>
                         </div>
                     </div>
