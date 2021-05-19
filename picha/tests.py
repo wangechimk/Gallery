@@ -11,7 +11,7 @@ class ImagesTest(TestCase):
         '''
         test method to create Image instances called before all tests
         '''
-        self.new_category = Categories(name='testing')
+        self.new_category = Category(name='testing')
         self.new_category.save_category()
         
         self.new_location = Locations(city='Nairobi', country='Kenya')
@@ -26,7 +26,7 @@ class ImagesTest(TestCase):
         '''
         test method to delete Image instances after each test is run
         '''
-        Categories.objects.all().delete()
+        Category.objects.all().delete()
         Locations.objects.all().delete()
         Images.objects.all().delete()
 
@@ -35,7 +35,7 @@ class ImagesTest(TestCase):
         test method to assert instances created during setUp
         '''
         self.assertTrue(isinstance(self.new_picture,Images))
-        self.assertTrue(isinstance(self.new_category, Categories))
+        self.assertTrue(isinstance(self.new_category, Category))
         self.assertTrue(isinstance(self.new_location, Locations))
 
     def test_save_image(self):
@@ -96,20 +96,20 @@ class CategoryTest(TestCase):
         '''
         test method to create Category instances called before all tests
         '''
-        self.new_category = Categories(name='categoryA')
+        self.new_category = Category(name='categoryA')
         self.new_category.save_category()
 
     def tearDown(self):
         '''
         test method to delete Category instances after each test is run
         '''
-        Categories.objects.all().delete()
+        Category.objects.all().delete()
 
     def test_save_category(self):
         '''
         test method to ensure a Category instance has been correctly saved
         '''
-        self.assertTrue(len(Categories.objects.all()) == 1)     
+        self.assertTrue(len(Category.objects.all()) == 1)     
 
     def test_delete_category(self):
         '''
@@ -117,13 +117,13 @@ class CategoryTest(TestCase):
         '''
         self.new_category.save_category()
         self.new_category.delete_category()
-        self.assertTrue(len(Categories.objects.all()) == 0)    
+        self.assertTrue(len(Category.objects.all()) == 0)    
 
     def test_update_category(self):
         '''
         test method to ensure a Category instance has been correctly updated
         '''
-        update_cat = Categories.update_category('categoryA', 'differentCat')
+        update_cat = Category.update_category('categoryA', 'differentCat')
         self.assertEqual(update_cat.name, 'differentCat')
 
 
